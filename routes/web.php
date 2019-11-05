@@ -14,3 +14,52 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/location', 'LocationsController@index');
+
+
+
+
+# Step 1
+
+# Location
+    # Name
+    # Text
+
+
+
+
+
+
+
+
+# Location
+    # Location (has many)   
+    # Event (has many)
+    # Name
+    # Image
+
+# Event (Belongs to Location)
+    # Combat (Subclass)
+    # Shop (Subclass)
+    # Name
+    # Image
+    # Text
+
+# Combat (Super Event) 
+    # 
+    # Monster
+
+
+# NPC
+    # Text
+
+
+# Monster
+    # Items
+    # Stats
+
+# Items
+    # Armour (SubClass) 
+    # Name
+    # Value
