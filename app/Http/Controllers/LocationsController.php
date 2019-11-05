@@ -9,7 +9,33 @@ class LocationsController extends Controller
 {
     public function index()
     {
-        $locations = Location::all();
         return Location::all();
+    }
+    public function show(Location $location)
+    {
+        return $location;
+    }
+    public function store()
+    {
+        $attributes = request()->validate([
+            'name' => 'required|unique:locations|max:255',
+            'text' => 'required|max:255',
+        ]);
+
+        $location = Location::create($attributes);
+
+        return response()->json($location, 201);
+    }
+    public function update(Location $location)
+    {
+        $location->update(request()->all());
+
+        return response()->json($location, 200);
+    }
+    public function delete(Location $location)
+    {
+        $location->delete();
+
+        return response()->json(null, 204);
     }
 }
