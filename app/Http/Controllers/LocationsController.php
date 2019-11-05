@@ -10,6 +10,6 @@ class LocationsController extends Controller
     public function index()
     {
         $locations = Location::all();
-        return view('location.index', compact('locations'));
+        return Location::all();
     }
 }
