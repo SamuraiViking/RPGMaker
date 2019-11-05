@@ -32,7 +32,7 @@ class LocationsController extends Controller
 
         return response()->json($location, 200);
     }
-    public function delete(Location $location)
+    public function destroy(Location $location)
     {
         $location->delete();
 
